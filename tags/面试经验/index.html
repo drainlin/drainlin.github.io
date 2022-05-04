@@ -44,7 +44,7 @@
 
 
 
-
+<link rel="dns-prefetch" href="comment.ixiaoxiang.cn">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -257,6 +257,15 @@
 
 
 
-
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"comment.ixiaoxiang.cn","placeholder":"发表你的见解吧~","avatar":"mp","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":["nick"],"avatarCDN":"https://sdn.geekzu.org/avatar/","meta":["nick","mail"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/tags/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
 </body>
 </html>
